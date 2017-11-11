@@ -3,6 +3,7 @@ import astropy
 import pandas as pd
 import matplotlib.pyplot as plt
 import pyde
+import pyde.de
 import IPython
 import ipywidgets
 from IPython.display import display
@@ -53,7 +54,7 @@ class GPTransitFit(object):
         """
         centers = self.lpf.gp.get_parameter_vector()
         print("Running PyDE Optimizer")
-        self.de = pyde.DiffEvol(self.lpf, self.lpf.ps.bounds, npop, maximize=maximize) # we want to maximize the likelihood
+        self.de = pyde.de.DiffEvol(self.lpf, self.lpf.ps.bounds, npop, maximize=maximize) # we want to maximize the likelihood
         self.min_pv, self.min_pv_lnval = self.de.optimize(ngen=de_iter)
         print("Optimized using PyDE")
         print("Final parameters:")
@@ -139,6 +140,9 @@ class GPTransitFit(object):
         ax.set_xlabel("Date (BJD)")
         ax.set_ylabel("Relative Flux")
         ax.legend(loc="upper left",fontsize=12)
+
+#   def plot_nicer()
+
 
     def get_transit_parameters(self,flatchain=None,burn=0,thin=1,st_rad=1.0,st_raderr1=0.022,st_teff=5650.,st_teff_err1=75.,e="fixed"):
         if flatchain==None:
