@@ -255,9 +255,9 @@ def plot_corner(chain,labels=None,burn=0,thin=1,title_fmt=".5f",**kwargs):
     Plot a nice corner plot for the jump parameters.
     """
     rcParams["lines.linewidth"] = 1.0
-    rcParams["axes.labelpad"] = 20.0
-    rcParams["xtick.labelsize"] = 14.0
-    rcParams["ytick.labelsize"] = 14.0
+    rcParams["axes.labelpad"] = 80.0
+    rcParams["xtick.labelsize"] = 10.0
+    rcParams["ytick.labelsize"] = 10.0
 
     ndim = chain.shape[2]
     chain = chain[:,burn::thin,:].reshape((-1, ndim))
@@ -268,10 +268,11 @@ def plot_corner(chain,labels=None,burn=0,thin=1,title_fmt=".5f",**kwargs):
                            verbose=False,
                            title_kwargs={"fontsize": 14},
                            hist_kwargs={"lw":1.},
-                           label_kwargs={"fontsize":18},
+                           label_kwargs={"fontsize":14},
                            xlabcord=(0.5,-0.45),
                            ylabcord=(-0.45,0.5),
                            title_fmt=title_fmt,**kwargs)
+    plt.savefig("/Users/Sophie/Desktop/test.pdf")
 
 def gelman_rubin(chains):
     """
