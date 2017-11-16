@@ -183,7 +183,7 @@ class GPTransitFit(object):
         ax.set_yticks([0.97,0.98,0.99,1.00])
         ax.legend(loc="upper left",fontsize=12)
         plt.tight_layout()
-        plt.savefig("/Users/Sophie/Desktop/lc.pdf",bbox_inches='tight')
+        plt.savefig("../figures/light_curve_fit.pdf",bbox_inches='tight')
 
 
 

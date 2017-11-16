@@ -272,7 +272,7 @@ def plot_corner(chain,labels=None,burn=0,thin=1,title_fmt=".5f",**kwargs):
                            xlabcord=(0.5,-0.45),
                            ylabcord=(-0.45,0.5),
                            title_fmt=title_fmt,**kwargs)
-    plt.savefig("/Users/Sophie/Desktop/test.pdf")
+    plt.savefig("../figures/corner.pdf")
 
 def gelman_rubin(chains):
     """
